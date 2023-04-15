@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    nav {
+      background-color: #363233;
+      width: 100%;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      background-color: #363233;
+    }
+
+      nav li {
+          float: left;
+      }
+
+      nav li a {
+          display: block;
+          padding: 14px 16px;
+          color: white;
+          text-align: center;
+          text-decoration: none;
+      }
+
+      nav li a:hover {
+          background-color: #e36517;
+      }
+      body {
+          font-family: Arial, sans-serif;
+      }
+
+      form {
+          margin: 20px auto;
+          width: 80%;
+          max-width: 500px;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+      body {
+        background: linear-gradient(to right, #c1d7f1, #6495ed);
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 48px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 150px;
+        text-shadow: 2px 2px #fff;
+      }
+
+      p {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 30px;
+        line-height: 1.5;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 50px;
+        padding: 10px 20px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        background: #333;
+        border-radius: 5px;
+        box-shadow: 2px 2px #999;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background: #666;
+        box-shadow: 4px 4px #999;
+      }
+    img {
+      position: fixed;
+
+      /* Set the bottom property to 0 to position the image at the bottom of the page */
+      bottom: 0;
+
+      /* Set the left property to 0 to position the image on the left side of the page */
+      right: 0;
+
+      /* Set the width and height of the image to your desired size */
+      width: 350px;
+      height: 350px;
+    }
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      color: #333;
+      bottom: 0;
+      position: fixed;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a th:href="@{home}">Home</a></li>
+    <li><a th:href="@{photo}">Files</a></li>
+    <li><a th:href="@{upload}">Upload</a></li>
+    <li><a th:href="@{search}">Search</a></li>
+    <li><a th:href="@{download}">Download</a></li>
+    <li><a th:href="@{delete}">Delete</a></li>
+    <li><a th:href="@{loginout}">Logout</a></li>
+  </ul>
+</nav>
+<h1>Welcome to the home page</h1>
+<p id="hello">we will be updating are usage instructions soon...</p>
+<br>
+<p id="100mb">The current size limit for upload is <b>100MB</b></p>
+<img src="../static/images/girlWalking.png">
+<footer>
+  <p >Project made by Sumedh ahire,TYBSC(CS),ACBCS</p>
+</footer>
+</body>
+</html>
