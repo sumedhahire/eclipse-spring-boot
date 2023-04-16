@@ -4,3 +4,8 @@ create table if not exists Photo(
     content_type varchar(255),
     data VARBINARY(max)
 );
+
+create table if not exists user_credentials(
+	username VARCHAR(255) PRIMARY KEY,
+  	password VARCHAR(255) NOT NULL
+);
