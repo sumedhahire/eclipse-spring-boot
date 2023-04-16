@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #daabf5, #a938eb);
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 50px;
+            text-shadow: 2px 2px #fff;color: #333;
+        }
+
+        form {
+           background-color: #fff;
+            background: linear-gradient(to left, #87c2d6, #44c3cf);
+            border-radius: 10px;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 325px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            width: 93%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"] {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #0a2a5e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        input[type="submit"]:hover{
+            transform: scale(1.4);
+            background-color: #715fd4;
+        }
+        form button:hover {
+            background-color: #3e8e41;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        a {
+            color: #4CAF50;
+        }
+        img {
+            position: fixed;
+            /* Set the left property to 0 to position the image on the left side of the page */
+            right: 0;
+            /* Set the width and height of the image to your desired size */
+            width: 300px;
+            height: 300px;
+            transition: transform 0.3s ease-in-out;
+
+        }
+        img:hover{
+            transform: scale(1.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+            bottom: 0;
+            position: fixed;
+        }
+        #bad{
+            color: red;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<h1>Login Page</h1>
+<div id="div1" th:if="${param.error}" style="padding: -10px;">
+    <p id="bad" th:text="${'Bad credentials. Please try again.'}" ></p>
+</div>
+<form th:action="@{/login}" method="post">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" />
+    </div>
+    <div>
+        <input type="submit" value="Login" />
+    </div>
+
+</form>
+<img src="/static/images/loginImg.png">
+<footer>
+    <p >Project made by Sumedh ahire,TYBSC(CS),ACBCS</p>
+</footer>
+</body>
+</html>

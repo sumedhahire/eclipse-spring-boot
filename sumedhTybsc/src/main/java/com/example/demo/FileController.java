@@ -61,4 +61,13 @@ public class FileController {
         model.addAttribute("photos", photos);
         return "photo";
     }
+    @GetMapping("/login")
+    public String getLogin(){
+        return "login";
+    }
+    @GetMapping("/loginout")
+    public String getLoginout(){
+        return "loginout";
+    }
+
 }
