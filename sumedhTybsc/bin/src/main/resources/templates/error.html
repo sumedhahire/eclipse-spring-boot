@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Error</title>
+  <style>
+    /* Add some basic styles to the error page */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      background-color: #f7f7f7;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      color: #c0392b; /* Add a red color to the heading */
+    }
+    p {
+      margin: 0;
+      color: #444; /* Add a dark gray color to the text */
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 50px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    a{
+      background-color: yellow;
+    }
+    img {
+      position: fixed;
+
+      /* Set the bottom property to 0 to position the image at the bottom of the page */
+      bottom: 0;
+
+      /* Set the left property to 0 to position the image on the left side of the page */
+      right: 0;
+
+      /* Set the width and height of the image to your desired size */
+      width: 400px;
+      height: 400px;
+      transition: transform 0.3s ease-in-out;
+    }
+    img:hover {
+      transform: scale(1.1);
+    }
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      color: #333;
+      bottom: 0;
+      position: fixed;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Error</h1>
+  <p>Sorry, an error occurred while processing your request.</p>
+  <p>Maybe you have entered invalid url request or the application has an error</p>
+  <p th:text="@{message}"></p>
+  <bold>Return to the home page--></bold><a th:href="@{home}">Home</a>
+</div>
+<img src="../static/images/error404.jpg">
+<footer>
+  <p >Project made by Sumedh ahire,TYBSC(CS),ACBCS</p>
+</footer>
+</body>
+</html>
