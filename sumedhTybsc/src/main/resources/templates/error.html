@@ -46,7 +46,9 @@
       height: 400px;
       transition: transform 0.3s ease-in-out;
     }
-  
+    img:hover {
+      transform: scale(1.1);
+    }
     footer p {
       margin: 0;
       font-size: 14px;
@@ -63,9 +65,8 @@
   <p>Maybe you have entered invalid url request or the application has an error</p>
   <p th:text="@{message}"></p>
   <bold>Return to the home page--></bold><a th:href="@{home}">Home</a>
-	<img src="../static/images/error404.jpg">
 </div>
-<!-- <img src="../static/images/error404.jpg"> -->
+<img src="../static/images/error404.jpg">
 <footer>
   <p >Project made by Sumedh ahire,TYBSC(CS),ACBCS</p>
 </footer>
