@@ -1,34 +1,103 @@
-<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Create User</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #daabf5, #a938eb);
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 3px;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+        }
+        button[type="submit"] {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #3E8E41;
+        }
+        .alert {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 3px;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+         h1 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 50px;
+            text-shadow: 2px 2px #fff;color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1>Create User</h1>
-	<form th:action="@{/register}" method="post">
-	  <label for="input1">username:</label>
-	  <input type="text" id="input1" name="input1">
-	
-	  <label for="input2">password:</label>
-	  <input type="text" id="input2" name="input2">
-	  
-	  
-	  Permission needed to add user:
-	  <label for="main1">username:</label>
-	  <input type="text" id="main1" name="main1">
-	
-	  <label for="main2">password:</label>
-	  <input type="text" id="main2" name="main2">
-	
-	  <button type="submit">Submit</button>
-	</form>
-	<div th:if="${result != null}">
-  			<p th:text="${result}"></p>
-	</div>
-	<div th:if="${result1 != null}">
-  			<p th:text="${result1}"></p>
-	</div>
+    <h1>Add User</h1>
+    <form th:action="@{/register}" method="post">
+        <label for="input1">Username:</label>
+        <input type="text" id="input1" name="input1">
 
+        <label for="input2">Password:</label>
+        <input type="password" id="input2" name="input2">
+		
+		Permission needed to add new user:<br>
+		
+        <label for="main1">root user:</label>
+        <input type="text" id="main1" name="main1">
+
+        <label for="main2">Password:</label>
+        <input type="password" id="main2" name="main2">
+
+        <button type="submit">Submit</button>
+    </form>
+    <div th:if="${result != null}" class="alert alert-success">
+        <p th:text="${result}"></p>
+    </div>
+    <div th:if="${result1 != null}" class="alert alert-danger">
+        <p th:text="${result1}"></p>
+    </div>
 </body>
 </html>
+

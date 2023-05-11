@@ -19,23 +19,19 @@ public class UserService {
 	public boolean getUser(String uString, String paString) {
 	    User user = userRepo.findByUsername("sagar");
 	    if (user != null) { 
-	        String encodedPassword = passwordEncoder.encode(paString);
-	        if (user.getUsername().equals(uString)) { 
-	            if (user.getPassword().equals(encodedPassword)) { 
-	                return true;
-	            } else {
-	            	System.out.println("*********password fail********");
-	                return false;
-	            }
+	        String encodedPassword = user.getPassword();
+	        if (passwordEncoder.matches(paString, encodedPassword)) { 
+	            return true;
 	        } else {
-	        	System.out.println("*********user fail********");
+	            System.out.println("*********password fail********");
 	            return false;
 	        }
 	    } else {
-	    	System.out.println("*********user not found********");
+	        System.out.println("*********user not found********");
 	        return false;
 	    }
 	}
+
 
 	
 	public void userAdd(String uString,String paString) {

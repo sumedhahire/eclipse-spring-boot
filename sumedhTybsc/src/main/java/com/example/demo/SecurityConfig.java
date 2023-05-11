@@ -37,11 +37,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 	    http
 	            .csrf()
-	            .ignoringAntMatchers("/upload","/download","/delete","/photo","/api/**")
+	            .ignoringAntMatchers("/upload","/download","/delete","/photo","/api/**","/h2console/**")
 	            .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 	            .and()
 	            .authorizeRequests()
-	            .antMatchers("/login", "/css/**","/js/**","/h2console/**","/static/**","/register").permitAll()
+	            .antMatchers("/login", "/css/**","/js/**","/static/**","/register").permitAll()
 	            .anyRequest().authenticated()
 	            .and()
 	            .formLogin()

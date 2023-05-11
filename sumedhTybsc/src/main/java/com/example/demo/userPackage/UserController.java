@@ -28,13 +28,13 @@ public class UserController {
 	public void getNewUser(@RequestParam("input1") String input1,@RequestParam("input2") String input2 ,@RequestParam("main1") String main1,@RequestParam("main2") String main2 ,Model model) {
 		if(userService.getUser(main1, main2)) {
 			if(userService.isUserPresent(input1)) {
-				model.addAttribute("result","user already exists");
+				model.addAttribute("result1","user already exists");
 			}else {
 				userService.userAdd(input1, input2);
 				model.addAttribute("result","user created");
 			}
 		}else {
-			model.addAttribute("result","authentication failed");
+			model.addAttribute("result1","authentication failed");
 		}
 		
 		//		if(userService.userAdd(input1, input2)) {
