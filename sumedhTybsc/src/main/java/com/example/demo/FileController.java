@@ -29,6 +29,11 @@ public class FileController {
         return "getHomeView";
     }
     
+    @GetMapping("/secret")
+    public String getSeString() {
+    	return "secret";
+    }
+    
     @GetMapping("/")
     public ModelAndView getDefualt() {
     	return new ModelAndView(getHome());

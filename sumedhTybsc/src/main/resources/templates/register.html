@@ -12,11 +12,22 @@
 	
 	  <label for="input2">password:</label>
 	  <input type="text" id="input2" name="input2">
+	  
+	  
+	  Permission needed to add user:
+	  <label for="main1">username:</label>
+	  <input type="text" id="main1" name="main1">
+	
+	  <label for="main2">password:</label>
+	  <input type="text" id="main2" name="main2">
 	
 	  <button type="submit">Submit</button>
 	</form>
 	<div th:if="${result != null}">
   			<p th:text="${result}"></p>
+	</div>
+	<div th:if="${result1 != null}">
+  			<p th:text="${result1}"></p>
 	</div>
 
 </body>

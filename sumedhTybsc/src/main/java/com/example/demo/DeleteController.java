@@ -37,7 +37,9 @@ public class DeleteController {
     	if(photo == null ) {
             return new ModelAndView("/error-404");
         }
+    	
         photoService.remove(photo.getId());
+        model.addAttribute("successMessage", "File Deleted successfully!");
         return new ModelAndView("/delete");
         
     }
